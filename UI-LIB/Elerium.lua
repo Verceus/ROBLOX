@@ -4,6 +4,13 @@
 	by Singularity (V3rm @ King Singularity) (Discord @ Singularity#5490)
 --]]
 
+local ui_options = {
+	main_color = Color3.fromRGB(41, 74, 122),
+	min_size = Vector2.new(400, 300),
+	toggle_key = Enum.KeyCode.RightShift,
+	can_resize = true,
+}
+
 do
 	local imgui = game:GetService("CoreGui"):FindFirstChild("imgui")
 	if imgui then imgui:Destroy() end
