@@ -252,23 +252,10 @@ function UILibrary.Load(GUITitle)
 		end
 	end)
 	
-	TitleButton.MouseButton1Down:Connect(function()
-		local LastMX, LastMY = Mouse.X, Mouse.Y
-		local Move, Kill
-		Move = Mouse.Move:Connect(function()
-			local NewMX, NewMY = Mouse.X, Mouse.Y
-			local DX, DY = NewMX - LastMX, NewMY - LastMY
-			ContainerFrame.Position += UDim2.new(0,DX,0,DY)
-			LastMX, LastMY = NewMX, NewMY
-		end)
-		Kill = UserInputService.InputEnded:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton1 then
-				Move:Disconnect()
-				Kill:Disconnect()
-			end
-		end)
-	end)
-	
+	TitleButton.Active = true
+        TitleButton.Draggable = true
+
+
 	Level += 1
 	
 	local MenuListLayout
